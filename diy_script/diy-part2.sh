@@ -40,6 +40,8 @@ sed -i 's/echo $h/echo $g/g' ./package/lean/autocore/files/x86/autocore
 # dockerman
 #sed -i 's/+cgroupfs-mount //g' feeds/luci/applications/luci-app-dockerman/Makefile
 #sed -i '42i sed -i "/^# the system init finished. By default this file does nothing./a \/etc\/init.d\/cgroupfs-mount disable" \/etc\/rc.local' package/lean/default-settings/files/zzz-default-settings
+rm -rf ./feeds/luci/applications/luci-app-dockerman
+git clone https://github.com/lisaac/luci-app-dockerman ./feeds/luci/applications/luci-app-dockerman
 
 # 临时
 sed -i 's/6.6/6.12/g'  ./target/linux/x86/Makefile
