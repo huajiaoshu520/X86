@@ -125,7 +125,13 @@ jobs:
           cd ..
           cp -f openwrt/.config config/$i.config
         done
-        
+
+    - name: 更新源 #Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 安装源 #Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+      
    # - name: 自动更新config #Git auto update config
    #   uses: stefanzweifel/git-auto-commit-action@v5.0.1
    #   id: commit
