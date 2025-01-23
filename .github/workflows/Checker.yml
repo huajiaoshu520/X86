@@ -1,0 +1,115 @@
+name: 更新_检查器 #Update_Checker
+
+env:
+
+  # huajiaoshu520X86源码
+  REPO_URL_huajiaoshu520X86: https://github.com/huajiaoshu520/X86
+  REPO_BRANCH_huajiaoshu520X86: main
+  REPO_PATH_huajiaoshu520X86: "huajiaoshu520X86"
+
+  # Lean源码
+  REPO_URL_Lede: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH_Lede: master
+  REPO_PATH_Lede : "lede"
+
+  # Lean Package源码
+  REPO_URL_Lede_Package: https://github.com/coolsnowwolf/packages
+  REPO_BRANCH_Lede_Package: master
+  REPO_PATH_Lede_Package : "package"
+
+  # Lean luci源码
+  REPO_URL_Lede_Luci: https://github.com/coolsnowwolf/luci
+  REPO_BRANCH_Lede_Luci: openwrt-23.05
+  REPO_PATH_Lede_Luci : "luci"
+  
+   # SSRP源码
+  REPO_URL_HelloWorld: https://github.com/fw876/helloworld
+  REPO_BRANCH_HelloWorld: master
+  REPO_PATH_HelloWorld : "helloworld"
+
+on:
+  repository_dispatch:
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    
+    steps:
+
+    - name: 获取提交散列 #Get Commit Hash
+      id: getHash
+      run: |
+        git clone --depth 1 $REPO_URL_huajiaoshu520X86 -b $REPO_BRANCH_huajiaoshu520X86 $REPO_PATH_huajiaoshu520X86
+        cd $REPO_PATH_huajiaoshu520X86
+        echo "commitHash_huajiaoshu520X86=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+        cd
+
+        git clone --depth 1 $REPO_URL_Lede -b $REPO_BRANCH_Lede $REPO_PATH_Lede
+        cd $REPO_PATH_Lede
+        echo "commitHash_Lede=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+        cd
+
+        git clone --depth 1 $REPO_URL_Lede_Package -b $REPO_BRANCH_Lede_Package $REPO_PATH_Lede_Package
+        cd $REPO_PATH_Lede_Package
+        echo "commitHash_Lede_Package=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+        cd
+
+        git clone --depth 1 $REPO_URL_Lede_Luci -b $REPO_BRANCH_Lede_Luci $REPO_PATH_Lede_Luci
+        cd $REPO_PATH_Lede_Luci
+        echo "commitHash_Lede_Luci=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+        cd
+
+        git clone --depth 1 $REPO_URL_HelloWorld -b $REPO_BRANCH_HelloWorld $REPO_PATH_HelloWorld 
+        cd $REPO_PATH_HelloWorld
+        echo "commitHash_HelloWorld=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+        cd
+
+    - name: 显示提交头和组合头 #Show Commit Head and Combination Heads
+      id: combHeader
+      run: |
+        echo "commitHash_huajiaoshu520X86: ${{ steps.getHash.outputs.commitHash_huajiaoshu520X86 }}"
+        echo "commitHash_Lede: ${{ steps.getHash.outputs.commitHash_Lede }}"
+        echo "commitHash_Lede_Package: ${{ steps.getHash.outputs.commitHash_Lede_Package }}"
+        echo "commitHash_Lede_Luci: ${{ steps.getHash.outputs.commitHash_Lede_Luci }}"
+        echo "commitHash_HelloWorld: ${{ steps.getHash.outputs.commitHash_HelloWorld }}"
+        echo "commitHash_All=\
+          ${{steps.getHash.outputs.commitHash_huajiaoshu520X86}}\
+          ${{steps.getHash.outputs.commitHash_Lede}}\
+          ${{steps.getHash.outputs.commitHash_Lede_Package}}\
+          ${{steps.getHash.outputs.commitHash_Lede_Luci}}\
+          ${{steps.getHash.outputs.commitHash_HelloWorld}}" >> $GITHUB_OUTPUT
+          
+    - name: 比较提交散列 #Compare Commit Hash
+      id: cacheHash
+      uses: actions/cache@v4.2.0
+      with:
+        path: .commitHash_All
+        key: HEAD-${{ steps.combHeader.outputs.commitHash_All }}
+   
+
+    - name: 保存新提交散列 #Save New Commit Hash
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        echo ${{ steps.getHash.outputs.commitHash_huajiaoshu520X86 }} | tee .commitHash_huajiaoshu520X86
+        echo ${{ steps.getHash.outputs.commitHash_Lede }} | tee .commitHash_Lede
+        echo ${{ steps.getHash.outputs.commitHash_Lede_Package }} | tee .commitHash_Lede_Package
+        echo ${{ steps.getHash.outputs.commitHash_Lede_Luci }} | tee .commitHash_Lede_Luci
+        echo ${{ steps.getHash.outputs.commitHash_HelloWorld }} | tee .commitHash_HelloWorld
+        echo ${{ steps.combHeader.outputs.commitHash_All }} | tee .commitHash_All
+
+    - name: 删除工作流程运行 #Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ github.repository }}
+        retain_days: 1
+        keep_minimum_runs: 2
+        
+    - name: 触发器构建 #Trigger build
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      uses: peter-evans/repository-dispatch@v3
+      with:
+        token: ${{ secrets. ACTIONS_TRIGGER_OPENWRT }}
+        event-type: OpenWrt相关代码更新 #OpenWrt Related Code Updates
