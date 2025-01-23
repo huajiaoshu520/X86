@@ -46,8 +46,8 @@ git clone https://github.com/Jason6111/luci-app-dockerman ./feeds/luci/applicati
 # 临时
 sed -i 's/6.6/6.12/g'  ./target/linux/x86/Makefile
 # zh netdata
-rm -rf ./feeds/luci/applications/luci-app-netdata/
-git clone https://github.com/Jason6111/luci-app-netdata ./feeds/luci/applications/luci-app-netdata/
+#rm -rf ./feeds/luci/applications/luci-app-netdata/
+#git clone https://github.com/Jason6111/luci-app-netdata ./feeds/luci/applications/luci-app-netdata/
 
 # 开启netdata温控监测
 sed -i 's/charts\.d = no/charts\.d = yes/g' ./feeds/luci/applications/luci-app-netdata/root/etc/netdata/netdata.conf
