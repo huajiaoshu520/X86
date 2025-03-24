@@ -66,19 +66,7 @@ jobs:
     - name: 检查准备 #Checkout
       uses: actions/checkout@main
       with:
-        fetch-depth: 0
-        
-    - name: 缓存依赖
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cache
-          openwrt/.config
-          openwrt/dl
-          openwrt/build_dir
-        key: ${{ runner.os }}-build-${{ hashFiles('**/Makefile') }}
-        restore-keys: |
-          ${{ runner.os }}-build-    
+        fetch-depth: 0   
           
     - name: 开始安装编译所需系统 #Initialization environment
       env:
@@ -165,10 +153,6 @@ jobs:
     #    rm -rf netdata-v1.33.1
     #    sha256sum dl/netdata-v1.33.1.tar.gz | awk '{print $1}' > checksum.txt
     #    sed -i "s/20ba8695d87187787b27128ac3aab9b09aa29ca6b508c48542e0f7d50ec9322b/$(cat checksum.txt)/" ./feeds/packages/admin/netdata/Makefile
-   
-    - name: 清理临时文件
-      run: |
-        sudo rm -rf /tmp/*    
 
     - name: 开始编译固件 #Compile the firmware
       id: compile
