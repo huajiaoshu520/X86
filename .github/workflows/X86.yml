@@ -168,7 +168,7 @@ jobs:
    
     - name: 清理临时文件
       run: |
-        rm -rf /tmp/*    
+        sudo rm -rf /tmp/*    
 
     - name: 开始编译固件 #Compile the firmware
       id: compile
