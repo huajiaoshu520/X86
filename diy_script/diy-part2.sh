@@ -54,6 +54,8 @@ sed -i -e 's/27.0.2/28.0.4/g' \
        -e 's/912c1dd/b8034c0/g' ./feeds/packages/utils/docker/Makefile
 sed -i -e 's/1.7.28/1.7.27/g' \
        -e 's/91685cebd50e3f353a402adadf61e2a6aeda3f63754fa0fcc978a043e00acac4/374f1c906b409cfad142b20d208f99e9539e5eb47fbb47ea541b4dfc9867345f/g' ./feeds/packages/utils/containerd/Makefile
+sed -i -e 's/1.1.13/1.2.6/g' \
+       -e 's/789d5749a08ef1fbe5d1999b67883206a68a4e58e6ca0151c411d678f3480b25/19b280702341f33ff353fa254d1dbdb67f6aab2c74395f6d651a17524f68e752/g' ./feeds/packages/utils/runc/Makefile
 # 临时
 sed -i 's/6.6/6.12/g'  ./target/linux/x86/Makefile
 
