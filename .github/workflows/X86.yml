@@ -130,7 +130,6 @@ jobs:
     - name: docker补丁和自定义设置 #Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_DOCKER_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_DOCKER_SH
