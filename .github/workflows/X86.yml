@@ -19,6 +19,7 @@ env:
   CONFIG_FILE: config/X86.config
   DIY_P1_SH: diy_script/diy-part1.sh
   DIY_P2_SH: diy_script/diy-part2.sh
+  DIY_DOCKER_SH: diy_script/diy-docker.sh
   COMMIT_LOG_NUM: 1
   RELEASE_TAG: 23.05-X86
   UPLOAD_BIN_DIR: false
@@ -125,7 +126,15 @@ jobs:
           cd ..
           cp -f openwrt/.config config/$i.config
         done
-      
+
+    - name: docker补丁和自定义设置 #Load custom configuration
+      run: |
+        [ -e files ] && mv files openwrt/files
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        chmod +x $DIY_DOCKER_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_DOCKER_SH
+        
     - name: 自动更新config #Git auto update config
       uses: stefanzweifel/git-auto-commit-action@v5.0.1
       id: commit
