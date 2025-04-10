@@ -61,5 +61,5 @@ sed -i 's/PKG_VERSION:=2.10.8/PKG_VERSION:=2.15.10/g' ./feeds/packages/net/lucky
 sed -i 's/^LUCI_DEPENDS:=+lucky/LUCI_DEPENDS:=+lucky +luci-compat/' ./feeds/luci/applications/luci-app-lucky/Makefile
 
 #禁用固件更新后跑分
-sed -i '/^echo "0 4 \* \* \* \/etc\/coremark.sh"$/d' ./feeds/packages/utils/coremark/coremark
-sed -i '/^echo "0 4 \* \* \* \/etc\/coremark.sh"$/d' ./feeds/packages/utils/coremark/Makefile
+sed -i '/^echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/coremark
+sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/Makefile
