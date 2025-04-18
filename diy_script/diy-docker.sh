@@ -22,7 +22,7 @@
 # wget https://codeload.github.com/moby/moby/tar.gz/v28.1.0
 # sha256sum v28.1.0
 sed -i -e 's/27.0.2/28.1.0/g' \
-       -e 's/2705abdd7a8a47ec88c0d2f0f31eede01ba4aa5ae8b5ab0e2c4ee25e7c314521/4da7dc30bf04d006fd25e0b8f8dedd773a456760f5d57afeef6e1520290bc9592/g' \
+       -e 's/2705abdd7a8a47ec88c0d2f0f31eede01ba4aa5ae8b5ab0e2c4ee25e7c314521/da7dc30bf04d006fd25e0b8f8dedd773a456760f5d57afeef6e1520290bc9592/g' \
        -e 's/e953d76/3f46cad/g' ./feeds/packages/utils/dockerd/Makefile
 
 # docker
