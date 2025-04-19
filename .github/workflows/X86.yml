@@ -127,11 +127,11 @@ jobs:
           cp -f openwrt/.config config/$i.config
         done
 
-    #- name: docker补丁和自定义设置 #Load custom configuration
-    #  run: |
-    #    chmod +x $DIY_DOCKER_SH
-    #    cd openwrt
-    #    $GITHUB_WORKSPACE/$DIY_DOCKER_SH
+    - name: docker补丁和自定义设置 #Load custom configuration
+      run: |
+        chmod +x $DIY_DOCKER_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_DOCKER_SH
         
     - name: 自动更新config #Git auto update config
       uses: stefanzweifel/git-auto-commit-action@v5.0.1
