@@ -21,7 +21,7 @@ env:
   DIY_P2_SH: diy_script/diy-part2.sh
   DIY_DOCKER_SH: diy_script/diy-docker.sh
   COMMIT_LOG_NUM: 1
-  RELEASE_TAG: 24.10-X86
+  RELEASE_TAG: X86
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -182,6 +182,13 @@ jobs:
          KERNEL_VERSION=$(ls -l *openwrt-x86-64-generic-kernel.bin | awk '{print $9}' | cut -d '-' -f1)
          echo "KERNEL_VERSION=$KERNEL_VERSION" >> $GITHUB_ENV
          
+    - name: 获取固件版本号
+      id: get_firmware_version
+      run: |
+        cd openwrt/bin/targets/x86/64
+        FIRMWARE_VERSION=$(ls -1 *openwrt-*-generic-squashfs-combined-efi.img.gz | head -n1 | awk -F'[-]' '{print $(NF-2)}')
+        echo "FIRMWARE_VERSION=$FIRMWARE_VERSION" >> $GITHUB_ENV
+     
     - name: 整理固件文件夹 # Organize files
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
@@ -190,7 +197,7 @@ jobs:
         rm -rf packages
         rm -rf profiles.json feeds.buildinfo config.buildinfo *openwrt-x86-64-generic-kernel.bin *openwrt-x86-64-generic-squashfs-rootfs.img.gz *openwrt-x86-64-generic.manifest sha256sums version.buildinfo
         for file in *-openwrt-x86-64-generic-squashfs-combined-efi.img.gz; do
-            mv "$file" "24.10-$file"
+            mv "$file" "$file"
         done
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
@@ -206,7 +213,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$RELEASE_TAG-$KERNEL_VERSION-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=$FIRMWARE_VERSION-$RELEASE_TAG-$KERNEL_VERSION-$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
