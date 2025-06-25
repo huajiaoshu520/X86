@@ -63,3 +63,7 @@ sed -i 's/^LUCI_DEPENDS:=+lucky/LUCI_DEPENDS:=+lucky +luci-compat/' ./feeds/luci
 #禁用固件更新后跑分
 sed -i '/^echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/coremark
 sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/Makefile
+
+#openlist
+sed -i 's/4.0.1/4.0.2/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/a41798e4fcd56b6fa500e22558908de1cd1a4db6344170c933ecac803b81b4a5/d6e7ca46748b1b1d21ff28850f5b25112930d3d2c211e8b9cec1041cbd3523d5/g'  ./feeds/packages/net/openlist/Makefile
