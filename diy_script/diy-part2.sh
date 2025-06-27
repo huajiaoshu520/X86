@@ -65,6 +65,6 @@ sed -i '/^echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./
 sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/Makefile
 
 #openlist
-sed -i 's/4.0.1/4.0.3/g'  ./feeds/packages/net/openlist/Makefile
-sed -i 's/a41798e4fcd56b6fa500e22558908de1cd1a4db6344170c933ecac803b81b4a5/f5bf709937c8f060ba1a47e937dbdb3f12e7690644a813cc7693ae028cbbc043/g'  ./feeds/packages/net/openlist/Makefile
-sed -i 's/0d52781014d01697e3f5af0131ae6f87124f06786188e543fe8b8a12bbeae7bd/26e30834fb36952b5383589a615bcdef6f2e34b29943fa7413351798b63a40e0/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/4.0.1/4.0.4/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/a41798e4fcd56b6fa500e22558908de1cd1a4db6344170c933ecac803b81b4a5/fcde8581b4a3f8b8ecbc541d2e25b6eea62433cf15a77a40e419e88b200a9418/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/0d52781014d01697e3f5af0131ae6f87124f06786188e543fe8b8a12bbeae7bd/895d9e2bb6d82c4c83ef2c9e786389bcdc7afff176ea5f8f7d97632f7d3b9aeb/g'  ./feeds/packages/net/openlist/Makefile
