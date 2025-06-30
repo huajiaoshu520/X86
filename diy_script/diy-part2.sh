@@ -65,6 +65,7 @@ sed -i '/^echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./
 sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/Makefile
 
 #openlist
+#sha256sum v
 sed -i 's/4.0.1/4.0.5/g'  ./feeds/packages/net/openlist/Makefile
 sed -i 's/a41798e4fcd56b6fa500e22558908de1cd1a4db6344170c933ecac803b81b4a5/c510e31d00868774b52429897c39789547756bbea76c501e2bcfbff1f4dc70b8/g'  ./feeds/packages/net/openlist/Makefile
 sed -i 's/0d52781014d01697e3f5af0131ae6f87124f06786188e543fe8b8a12bbeae7bd/0b755542c660ac66c86689957cd0d5c783ad5dac64222f764988f1c26c51d55a/g'  ./feeds/packages/net/openlist/Makefile
