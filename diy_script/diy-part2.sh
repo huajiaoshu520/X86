@@ -54,18 +54,20 @@ sed -i 's/charts\.d = no/charts\.d = yes/g' ./feeds/luci/applications/luci-app-n
 
 #lucky
 sed -i 's|/etc/lucky|/etc/config/lucky2|g' ./feeds/luci/applications/luci-app-lucky/root/etc/config/lucky
-sed -i 's/PKG_RELEASE:=8/PKG_RELEASE:=1/g' ./feeds/luci/applications/luci-app-lucky/Makefile
-sed -i 's/PKG_VERSION:=1.2.0/PKG_VERSION:=2.2.2/g' ./feeds/luci/applications/luci-app-lucky/Makefile
-sed -i 's/PKG_RELEASE:=1/PKG_RELEASE:=12/g' ./feeds/packages/net/lucky/Makefile
-sed -i 's/PKG_VERSION:=2.10.8/PKG_VERSION:=2.17.8/g' ./feeds/packages/net/lucky/Makefile
-sed -i 's/^LUCI_DEPENDS:=+lucky/LUCI_DEPENDS:=+lucky +luci-compat/' ./feeds/luci/applications/luci-app-lucky/Makefile
+#sed -i 's/PKG_RELEASE:=8/PKG_RELEASE:=1/g' ./feeds/luci/applications/luci-app-lucky/Makefile
+#sed -i 's/PKG_VERSION:=1.2.0/PKG_VERSION:=2.2.2/g' ./feeds/luci/applications/luci-app-lucky/Makefile
+#sed -i 's/PKG_RELEASE:=1/PKG_RELEASE:=12/g' ./feeds/packages/net/lucky/Makefile
+#sed -i 's/PKG_VERSION:=2.10.8/PKG_VERSION:=2.17.8/g' ./feeds/packages/net/lucky/Makefile
+#sed -i 's/^LUCI_DEPENDS:=+lucky/LUCI_DEPENDS:=+lucky +luci-compat/' ./feeds/luci/applications/luci-app-lucky/Makefile
 
 #禁用固件更新后跑分
 sed -i '/^echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/coremark
 sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark.sh" >> \/etc\/crontabs\/root$/d' ./feeds/packages/utils/coremark/Makefile
 
 #openlist
+#wget https://codeload.github.com/OpenListTeam/OpenList/tar.gz/v4.0.7
 #sha256sum v
-sed -i 's/4.0.1/4.0.5/g'  ./feeds/packages/net/openlist/Makefile
-sed -i 's/a41798e4fcd56b6fa500e22558908de1cd1a4db6344170c933ecac803b81b4a5/c510e31d00868774b52429897c39789547756bbea76c501e2bcfbff1f4dc70b8/g'  ./feeds/packages/net/openlist/Makefile
-sed -i 's/0d52781014d01697e3f5af0131ae6f87124f06786188e543fe8b8a12bbeae7bd/0b755542c660ac66c86689957cd0d5c783ad5dac64222f764988f1c26c51d55a/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/4.0.5/4.0.7/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/c510e31d00868774b52429897c39789547756bbea76c501e2bcfbff1f4dc70b8/e91903ebae9221aa3e7e5661eeda6b7dcc0bb6a69fabcd9625dd425872e931c6/g'  ./feeds/packages/net/openlist/Makefile
+#https://github.com/OpenListTeam/OpenList-Frontend/releases
+sed -i 's/0b755542c660ac66c86689957cd0d5c783ad5dac64222f764988f1c26c51d55a/5075254fbae8d79b478003216284b37d0571326466759d874fcdb76faf86e11d/g'  ./feeds/packages/net/openlist/Makefile
