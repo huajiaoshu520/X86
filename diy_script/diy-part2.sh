@@ -68,6 +68,6 @@ sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark
 #wget https://codeload.github.com/OpenListTeam/OpenList/tar.gz/v4.0.7
 #sha256sum v
 sed -i 's/4.0.5/4.0.7/g'  ./feeds/packages/net/openlist/Makefile
-sed -i 's/c510e31d00868774b52429897c39789547756bbea76c501e2bcfbff1f4dc70b8/e91903ebae9221aa3e7e5661eeda6b7dcc0bb6a69fabcd9625dd425872e931c6/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/c510e31d00868774b52429897c39789547756bbea76c501e2bcfbff1f4dc70b8/363b990585b367e2cb1e98232ccdfba33b87b5e0352a51083eb16e223e5eac78/g'  ./feeds/packages/net/openlist/Makefile
 #https://github.com/OpenListTeam/OpenList-Frontend/releases
 sed -i 's/0b755542c660ac66c86689957cd0d5c783ad5dac64222f764988f1c26c51d55a/5075254fbae8d79b478003216284b37d0571326466759d874fcdb76faf86e11d/g'  ./feeds/packages/net/openlist/Makefile
