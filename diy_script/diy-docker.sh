@@ -21,15 +21,15 @@
 # dockerd
 # wget https://codeload.github.com/moby/moby/tar.gz/v28.3.0
 # sha256sum v28.1.1
-sed -i -e 's/28.0.4/28.3.2/g' \
-       -e 's/4b347a2b83221952cab93197f6e9bc7ffe54dd4bd0a9644c176aecde551721ca/e4828e32e474cef1b78f40278211648300071399c7498252dfe0b96e789b8a31/g' \
-       -e 's/6430e49/e77ff99/g' ./feeds/packages/utils/dockerd/Makefile
+sed -i -e 's/28.0.4/28.3.3/g' \
+       -e 's/4b347a2b83221952cab93197f6e9bc7ffe54dd4bd0a9644c176aecde551721ca/3727c8963ab4bcff12291e99e4d4a6b9a29ace5236fd245717bbff648f15f8cd/g' \
+       -e 's/6430e49/bea959c/g' ./feeds/packages/utils/dockerd/Makefile
 
 # docker
 # wget https://codeload.github.com/docker/cli/tar.gz/v28.3.0
-sed -i -e 's/28.0.4/28.3.2/g' \
-       -e 's/09b41aa5ff656bc135feb80cb9b73c70aeba099ef9756c3cef7bcb2eb3c98ba6/b65cd415e63be23fcaa63107bc47a762173a06c84fb78b1575edc5443bb39867/g' \
-       -e 's/b8034c0/578ccf6/g' ./feeds/packages/utils/docker/Makefile
+sed -i -e 's/28.0.4/28.3.3/g' \
+       -e 's/09b41aa5ff656bc135feb80cb9b73c70aeba099ef9756c3cef7bcb2eb3c98ba6/172dca437abb36485275a8d43550db90b6878bcc676fc0b73a67a57a15026cff/g' \
+       -e 's/b8034c0/980b856/g' ./feeds/packages/utils/docker/Makefile
 
 # containerd      
 # https://codeload.github.com/containerd/containerd
