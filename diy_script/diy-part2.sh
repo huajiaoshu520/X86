@@ -57,8 +57,8 @@ sed -i 's|/etc/lucky|/etc/config/lucky2|g' ./feeds/luci/applications/luci-app-lu
 #sed -i 's/PKG_RELEASE:=8/PKG_RELEASE:=1/g' ./feeds/luci/applications/luci-app-lucky/Makefile
 #sed -i 's/PKG_VERSION:=1.2.0/PKG_VERSION:=2.2.2/g' ./feeds/luci/applications/luci-app-lucky/Makefile
 #sed -i 's/PKG_RELEASE:=1/PKG_RELEASE:=12/g' ./feeds/packages/net/lucky/Makefile
-sed -i 's/PKG_VERSION:=2.17.8/PKG_VERSION:=2.18.1/g' ./feeds/packages/net/lucky/Makefile
-sed -i 's/b78c8a81cceb817904f437a81eca4260d32dd9b9/3ab4862229637eab5e300dae107b91da516b93ae/g' ./feeds/packages/net/lucky/Makefile
+sed -i 's/PKG_VERSION:=2.17.8/PKG_VERSION:=2.19.5/g' ./feeds/packages/net/lucky/Makefile
+sed -i 's/b78c8a81cceb817904f437a81eca4260d32dd9b9/dce001f7abac1764bf0f20c5e98d3844f4866887ddf4f2c47542809f9359ee9a/g' ./feeds/packages/net/lucky/Makefile
 #sed -i 's/^LUCI_DEPENDS:=+lucky/LUCI_DEPENDS:=+lucky +luci-compat/' ./feeds/luci/applications/luci-app-lucky/Makefile
 
 #禁用固件更新后跑分
