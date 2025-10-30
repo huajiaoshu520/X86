@@ -25,4 +25,5 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 # Temp
 #rm -rf ./target/linux/generic/hack-6.12/220-arm-gc_sections.patch
 # Switch to the specific commit (4bb635d) for mbedtls directory
+rm -rf ./package/libs/mbedtls/100-fix-gcc14-build.patch
 git checkout 4bb635d -- package/libs/mbedtls
