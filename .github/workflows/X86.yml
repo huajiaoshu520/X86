@@ -13,7 +13,7 @@ on:
 #    - cron: 0 16 * * 0
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede git reset --hard 89e46be
+  REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/X86.config
@@ -87,7 +87,7 @@ jobs:
       working-directory: /mnt/workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone $REPO_URL git reset --hard 89e46be -b $REPO_BRANCH openwrt
         ln -sf /mnt/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 缓存 #Cache
