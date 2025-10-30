@@ -13,7 +13,7 @@ on:
 #    - cron: 0 16 * * 0
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/coolsnowwolf/lede git reset --hard 89e46be
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/X86.config
