@@ -70,7 +70,7 @@ sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark
 #openlist
 #wget https://codeload.github.com/OpenListTeam/OpenList/tar.gz/v4.0.7
 #sha256sum v
-sed -i 's/4.1.4/4.1.5/g'  ./feeds/packages/net/openlist/Makefile
-sed -i 's/63726bbedc1ad8995cfad0ae7451cb503a504a3af3579710c4430c12286e01c3/5ddf3f0b7616248862a8b908cffad9437d19053092bc45e8299ad7c95a3626d2/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/4.1.4/4.1.6/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/63726bbedc1ad8995cfad0ae7451cb503a504a3af3579710c4430c12286e01c3/9cb26d5a41a9df56a6c937bc37a572ff104e2d5a72c0ec8813273f2e67c0a092/g'  ./feeds/packages/net/openlist/Makefile
 #https://github.com/OpenListTeam/OpenList-Frontend/releases
-sed -i 's/8ba2dcb8070a7a13e628f7cf6cb1bbce330f483992dc64e3680f741270a59db3/3445cf8752d09f7a6ed9360ac9cc6bd57718f1f30a37d1754215e5125de15535/g'  ./feeds/packages/net/openlist/Makefile
+sed -i 's/8ba2dcb8070a7a13e628f7cf6cb1bbce330f483992dc64e3680f741270a59db3/0f9933449040e1253f04d4ed79aa62783a5d817c884495b63f99c7207012d1b8/g'  ./feeds/packages/net/openlist/Makefile
