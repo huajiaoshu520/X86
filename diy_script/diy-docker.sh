@@ -23,7 +23,7 @@
 # sha256sum v28.1.1
 sed -i -e 's/28.0.4/28.5.2/g' \
        -e 's/4b347a2b83221952cab93197f6e9bc7ffe54dd4bd0a9644c176aecde551721ca/0e450c03c536a1304ba8fd26ca4c4ff96fac62182fd042fec90ffdf4a0969d40/g' \
-       -e 's/6430e49/f8215cc/g' ./feeds/packages/utils/dockerd/Makefile
+       -e 's/6430e49/89c5e8f/g' ./feeds/packages/utils/dockerd/Makefile
 
 # docker
 # wget https://codeload.github.com/docker/cli/tar.gz/v28.5.2
@@ -36,6 +36,7 @@ sed -i -e 's/28.0.4/28.5.2/g' \
 sed -i -e 's/1.7.27/1.7.28/g' \
        -e 's/374f1c906b409cfad142b20d208f99e9539e5eb47fbb47ea541b4dfc9867345f/546aa9fdb04a0cd40a5cbc5c931c269d42522d473abd7234b98d98e63316ed9b/g' ./feeds/packages/utils/containerd/Makefile
 #sed -i 's/containerd-shim,containerd-shim-runc-v1,//g' ./feeds/packages/utils/containerd/Makefile
+
 # runc
 # https://codeload.github.com/opencontainers/runc/tar.gz/v1.3.3
 sed -i -e 's/1.2.6/1.3.3/g' \
