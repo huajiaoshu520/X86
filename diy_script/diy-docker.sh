@@ -35,7 +35,7 @@ sed -i -e 's/28.0.4/28.5.2/g' \
 # https://codeload.github.com/containerd/containerd
 sed -i -e 's/1.7.27/1.7.28/g' \
        -e 's/374f1c906b409cfad142b20d208f99e9539e5eb47fbb47ea541b4dfc9867345f/546aa9fdb04a0cd40a5cbc5c931c269d42522d473abd7234b98d98e63316ed9b/g' ./feeds/packages/utils/containerd/Makefile
-sed -i 's/containerd-shim,containerd-shim-runc-v1,//g' ./feeds/packages/utils/containerd/Makefile
+#sed -i 's/containerd-shim,containerd-shim-runc-v1,//g' ./feeds/packages/utils/containerd/Makefile
 # runc
 # https://codeload.github.com/opencontainers/runc/tar.gz/v1.3.3
 sed -i -e 's/1.2.6/1.3.3/g' \
