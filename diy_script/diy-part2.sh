@@ -77,4 +77,4 @@ sed -i 's/8ba2dcb8070a7a13e628f7cf6cb1bbce330f483992dc64e3680f741270a59db3/0f993
 
 #dns2
 sed -i 's|PKG_SOURCE_URL:=@SF/dns2socks|PKG_SOURCE_URL:=https://github.com/huajiaoshu520/X86/raw/refs/heads/main|' ./feeds/packages/net/dns2socks/Makefile
-sed -i 's|PKG_SOURCE_URL:=@SF/dns2socks|PKG_SOURCE_URL:=https://github.com/huajiaoshu520/X86/raw/refs/heads/main|' ./feeds/helloworld/net/dns2socks/Makefile
+sed -i 's|PKG_SOURCE_URL:=@SF/dns2socks|PKG_SOURCE_URL:=https://github.com/huajiaoshu520/X86/raw/refs/heads/main|' ./feeds/helloworld/dns2socks/Makefile
