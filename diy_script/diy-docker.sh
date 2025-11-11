@@ -21,9 +21,9 @@
 # dockerd
 # wget https://codeload.github.com/moby/moby/tar.gz/v29.0.0
 # sha256sum v28.1.1
-sed -i -e 's/v28.0.4/docker-v29.0.0/g' \
+sed -i -e 's/28.0.4/29.0.0/g' \
        -e 's/4b347a2b83221952cab93197f6e9bc7ffe54dd4bd0a9644c176aecde551721ca/5d0f9bb3c5210a14c8c2fcaebb9949f2f69514e4b41a17dba69dff36ab0d764b/g' \
-       -e 's/PKG_GIT_REF:=v\$(PKG_VERSION)/PKG_GIT_REF:=$(PKG_VERSION)/' \
+       -e 's/PKG_GIT_REF:=v\$(PKG_VERSION)/PKG_GIT_REF:=docker-v$(PKG_VERSION)/' \
        -e 's/6430e49/d105562/g' ./feeds/packages/utils/dockerd/Makefile
 
 # docker
