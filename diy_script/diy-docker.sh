@@ -19,23 +19,23 @@
 #git clone https://github.com/Jason6111/dockerd ./feeds/packages/utils/dockerd && chmod -R 777 ./feeds/packages/utils/dockerd
 
 # dockerd
-# wget https://codeload.github.com/moby/moby/tar.gz/v29.0.0
+# wget https://codeload.github.com/moby/moby/tar.gz/docker-v29.0.1
 # sha256sum v28.1.1
-sed -i -e 's/28.0.4/29.0.0/g' \
-       -e 's/4b347a2b83221952cab93197f6e9bc7ffe54dd4bd0a9644c176aecde551721ca/5d0f9bb3c5210a14c8c2fcaebb9949f2f69514e4b41a17dba69dff36ab0d764b/g' \
+sed -i -e 's/28.0.4/29.0.1/g' \
+       -e 's/4b347a2b83221952cab93197f6e9bc7ffe54dd4bd0a9644c176aecde551721ca/1a95241adb3f648784b767352d87b16c3b1e8b2836e44685e2a5cc122619d9dd/g' \
        -e 's/PKG_GIT_REF:=v\$(PKG_VERSION)/PKG_GIT_REF:=docker-v$(PKG_VERSION)/' \
-       -e 's/6430e49/d105562/g' ./feeds/packages/utils/dockerd/Makefile
+       -e 's/6430e49/198b5e3/g' ./feeds/packages/utils/dockerd/Makefile
 
 # docker
-# wget https://codeload.github.com/docker/cli/tar.gz/v29.0.0
-sed -i -e 's/28.0.4/29.0.0/g' \
-       -e 's/09b41aa5ff656bc135feb80cb9b73c70aeba099ef9756c3cef7bcb2eb3c98ba6/5d1819818f42f2e84113a3d4a7159a2aaa6497aff77df61495f0d96eafd2ec1a/g' \
-       -e 's/b8034c0/3d4129b/g' ./feeds/packages/utils/docker/Makefile
+# wget https://codeload.github.com/docker/cli/tar.gz/v29.0.1
+sed -i -e 's/28.0.4/29.0.1/g' \
+       -e 's/09b41aa5ff656bc135feb80cb9b73c70aeba099ef9756c3cef7bcb2eb3c98ba6/ea7ed901729d93f753226b2e374cddeffed86d56d13cbfa23920b810f33a01e9/g' \
+       -e 's/b8034c0/eedd969/g' ./feeds/packages/utils/docker/Makefile
 
 # containerd      
-# https://codeload.github.com/containerd/containerd/tar.gz
-sed -i -e 's/1.7.27/2.1.5/g' \
-       -e 's/374f1c906b409cfad142b20d208f99e9539e5eb47fbb47ea541b4dfc9867345f/f8def69e02ecff84c07e24350be0b834a3a8e1f6accf042cae4d504e52eb03d1/g' ./feeds/packages/utils/containerd/Makefile
+# https://codeload.github.com/containerd/containerd/tar.gz/v2.2.0
+sed -i -e 's/1.7.27/2.2.0/g' \
+       -e 's/374f1c906b409cfad142b20d208f99e9539e5eb47fbb47ea541b4dfc9867345f/86e7a268fc73f5332522baef86082c1d6c17986e2957a9ad842ead35d1080fca/g' ./feeds/packages/utils/containerd/Makefile
 sed -i 's/containerd-shim,containerd-shim-runc-v1,//g' ./feeds/packages/utils/containerd/Makefile
 
 # runc
