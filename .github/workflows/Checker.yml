@@ -19,7 +19,7 @@ env:
 
   # Lean luci源码
   REPO_URL_Lede_Luci: https://github.com/coolsnowwolf/luci
-  REPO_BRANCH_Lede_Luci: openwrt-24.10
+  REPO_BRANCH_Lede_Luci: openwrt-25.12
   REPO_PATH_Lede_Luci : "luci"
   
    # SSRP源码
