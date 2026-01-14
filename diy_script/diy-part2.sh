@@ -59,7 +59,7 @@ sed -i 's|/etc/lucky|/etc/config/lucky2|g' ./feeds/luci/applications/luci-app-lu
 #sed -i 's/PKG_RELEASE:=8/PKG_RELEASE:=1/g' ./feeds/luci/applications/luci-app-lucky/Makefile
 #sed -i 's/PKG_VERSION:=1.2.0/PKG_VERSION:=2.2.2/g' ./feeds/luci/applications/luci-app-lucky/Makefile
 #sed -i 's/PKG_RELEASE:=1/PKG_RELEASE:=12/g' ./feeds/packages/net/lucky/Makefile
-sed -i 's/PKG_VERSION:=2.17.8/PKG_VERSION:=2.24.0/g' ./feeds/packages/net/lucky/Makefile
+sed -i 's/PKG_VERSION:=2.17.8/PKG_VERSION:=2.26.1/g' ./feeds/packages/net/lucky/Makefile
 #sed -i 's/^LUCI_DEPENDS:=+lucky/LUCI_DEPENDS:=+lucky +luci-compat/' ./feeds/luci/applications/luci-app-lucky/Makefile
 
 #禁用固件更新后跑分
