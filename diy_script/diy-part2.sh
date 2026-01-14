@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.31.66/g' ./package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.1.1/192.168.31.66/g' ./package/base-files/luci/bin/config_generate
 
 # 日期
 sed -i 's/os.date(/&"%Y-%m-%d %H:%M:%S"/' ./package/lean/autocore/files/x86/index.htm
