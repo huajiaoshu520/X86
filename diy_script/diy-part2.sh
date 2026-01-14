@@ -34,10 +34,10 @@ rm -rf feeds/packages/net/shadowsocks-libev
 mkdir -p ./feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/background/ && curl -o ./feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/background/Network.mp4 https://raw.githubusercontent.com/Jason6111/OpenWrt_Personal/main/other/argon/video/default/Network.mp4
 
 # 恢复主机型号
-sed -i 's/(dmesg | grep .*/{a}${b}${c}${d}${e}${f}/g' ./package/lean/autocore/files/x86/autocore
+#sed -i 's/(dmesg | grep .*/{a}${b}${c}${d}${e}${f}/g' ./package/lean/autocore/files/x86/autocore
 #sed -i 's/(cat \/tmp.*/\{a}${b}${c}${d}${e}${f}/g' package/lean/autocore/files/x86/autocore
-sed -i '/h=${g}.*/d' ./package/lean/autocore/files/x86/autocore
-sed -i 's/echo $h/echo $g/g' ./package/lean/autocore/files/x86/autocore
+#sed -i '/h=${g}.*/d' ./package/lean/autocore/files/x86/autocore
+#sed -i 's/echo $h/echo $g/g' ./package/lean/autocore/files/x86/autocore
 
 # 临时
 sed -i 's/6.6/6.12/g'  ./target/linux/x86/Makefile
