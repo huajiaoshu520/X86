@@ -43,13 +43,8 @@ mkdir -p ./feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/backgroun
 sed -i 's/6.6/6.12/g'  ./target/linux/x86/Makefile
 
 # zh netdata
-# wget https://github.com/netdata/netdata/releases/download/v2.8.5/netdata-v2.8.5.tar.gz
-#sed -i 's/1.33.1/2.8.5/g' ./feeds/packages/admin/netdata/Makefile
-#sed -i 's/20ba8695d87187787b27128ac3aab9b09aa29ca6b508c48542e0f7d50ec9322b/14bcb133738537101f9a5fb0b27f341720ac22e0f4a71ac59e59f769b7323c05/g' ./feeds/packages/admin/netdata/Makefile
-#rm -rf ./feeds/packages/admin/netdata
-#git clone https://github.com/huajiaoshu520/netdata ./feeds/packages/admin/netdata/
 rm -rf ./feeds/luci/applications/luci-app-netdata/
-git clone https://github.com/huajiaoshu520/luci-app-netdata ./feeds/luci/applications/luci-app-netdata/
+git clone https://github.com/Jason6111/luci-app-netdata ./feeds/luci/applications/luci-app-netdata/
 
 # 开启netdata温控监测
 sed -i 's/charts\.d = no/charts\.d = yes/g' ./feeds/luci/applications/luci-app-netdata/root/etc/netdata/netdata.conf
