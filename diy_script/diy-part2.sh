@@ -77,3 +77,6 @@ sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark
 #dns2
 #sed -i 's|PKG_SOURCE_URL:=@SF/dns2socks|PKG_SOURCE_URL:=https://github.com/huajiaoshu520/X86/raw/refs/heads/main|' ./feeds/packages/net/dns2socks/Makefile
 #sed -i 's|PKG_SOURCE_URL:=@SF/dns2socks|PKG_SOURCE_URL:=https://github.com/huajiaoshu520/X86/raw/refs/heads/main|' ./feeds/helloworld/dns2socks/Makefile
+
+#tmep
+sed -i 's/e251189ed315f22ab63dc6f17b03178676e10c21fff0cdd863b294a3c51a1b5b/c48331dcfda73d16cb12a0aa069eb62a5c370428c7559011a7284a9ef67d3089/g' ./package/libs/ustream-ssl/Makefile
