@@ -34,7 +34,9 @@ sed -i -e 's/29.1.1/29.2.1/g' \
 # containerd      
 # wget https://codeload.github.com/containerd/containerd/tar.gz/v2.2.0
 sed -i -e 's/2.2.0/2.2.1/g' \
-       -e 's/86e7a268fc73f5332522baef86082c1d6c17986e2957a9ad842ead35d1080fca/af5707a26891486332142cc0ade4f0c543f707d3954838f5cecee73b833cf9b4/g' ./feeds/packages/utils/containerd/Makefile
+       -e 's/86e7a268fc73f5332522baef86082c1d6c17986e2957a9ad842ead35d1080fca/af5707a26891486332142cc0ade4f0c543f707d3954838f5cecee73b833cf9b4/g' \
+       -e '/# $(call EnsureVendoredVersion,..\/*containerd\/Makefile.*,containerd.installer)/d' \
+    ./feeds/packages/utils/containerd/Makefile
        #sed -i 's/containerd-shim,containerd-shim-runc-v1,//g' ./feeds/packages/utils/containerd/Makefile
 
 # runc
