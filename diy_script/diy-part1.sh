@@ -17,7 +17,6 @@ sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=$(LINUX_VERSION)-/g' include/image.mk
 
 # Add a feed source
 sed -i 's/23\.05/25.12/g' feeds.conf.default
-echo 'src-git lingti https://github.com/huajiaoshu520/LingTigameacc.git' >>feeds.conf.default
 #echo 'src-git helloworld https://github.com/huajiaoshu/helloworld' >>feeds.conf.default
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
