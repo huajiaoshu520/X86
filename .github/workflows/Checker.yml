@@ -84,7 +84,7 @@ jobs:
           
     - name: 比较提交散列 #Compare Commit Hash
       id: cacheHash
-      uses: actions/cache@v4.2.0
+      uses: actions/cache@v5.0.3
       with:
         path: .commitHash_All
         key: HEAD-${{ steps.combHeader.outputs.commitHash_All }}
@@ -101,7 +101,7 @@ jobs:
         echo ${{ steps.combHeader.outputs.commitHash_All }} | tee .commitHash_All
 
     - name: 删除工作流程运行 #Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@v2
+      uses: Mattraks/delete-workflow-runs@v2.1.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
@@ -110,7 +110,7 @@ jobs:
         
     - name: 触发器构建 #Trigger build
       if: steps.cacheHash.outputs.cache-hit != 'true'
-      uses: peter-evans/repository-dispatch@v3
+      uses: peter-evans/repository-dispatch@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         event-type: OpenWrt相关代码更新 #OpenWrt Related Code Updates
