@@ -40,7 +40,7 @@ mkdir -p ./feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/backgroun
 #sed -i 's/echo $h/echo $g/g' ./package/lean/autocore/files/x86/autocore
 
 # 临时
-sed -i 's/6.6/6.12/g'  ./target/linux/x86/Makefile
+sed -i 's/6.12/6.18/g'  ./target/linux/x86/Makefile
 
 # zh netdata
 rm -rf ./feeds/luci/applications/luci-app-netdata/
