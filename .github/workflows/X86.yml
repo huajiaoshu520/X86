@@ -227,7 +227,7 @@ jobs:
         git -C openwrt/feeds/helloworld log -n $COMMIT_LOG_NUM >> release.txt        
 
     - name: 上传固件以及发布 #Upload firmware to release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -243,7 +243,7 @@ jobs:
         keep_minimum_runs: 2
 
     - name: 删除旧版本 #Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.3.4
+      uses: Jason6111/delete-older-releases@v0.3.5
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 5
