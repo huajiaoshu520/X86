@@ -21,7 +21,7 @@ env:
   DIY_P2_SH: diy_script/diy-part2.sh
   DIY_DOCKER_SH: diy_script/diy-docker.sh
   COMMIT_LOG_NUM: 1
-  RELEASE_TAG: 23.05-X86
+  RELEASE_TAG: 25.12-X86
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -32,7 +32,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - name: 检查服务器性能 #Check Server Performance
       run: |
