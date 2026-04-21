@@ -56,8 +56,7 @@ sed -i 's/charts\.d = no/charts\.d = yes/g' ./feeds/luci/applications/luci-app-n
 
 #lucky
 sed -i 's/PKG_VERSION:=2.17.8/PKG_VERSION:=2.26.2/g' ./feeds/packages/net/lucky/Makefile
-#sed -i 's|/etc/lucky|/etc/config/lucky2|g' ./feeds/luci/applications/luci-app-lucky/root/etc/config/lucky
-sed -i 's|/etc/lucky|/etc/config/lucky2|g' ./feeds/lucky/root/etc/config/lucky
+sed -i 's|/etc/lucky|/etc/config/lucky2|g' ./feeds/luci/applications/luci-app-lucky/root/etc/config/lucky
 #sed -i 's/PKG_RELEASE:=8/PKG_RELEASE:=1/g' ./feeds/luci/applications/luci-app-lucky/Makefile
 #sed -i 's/PKG_VERSION:=1.2.0/PKG_VERSION:=2.2.2/g' ./feeds/luci/applications/luci-app-lucky/Makefile
 #sed -i 's/PKG_RELEASE:=1/PKG_RELEASE:=12/g' ./feeds/packages/net/lucky/Makefile
