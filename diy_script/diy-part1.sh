@@ -24,7 +24,6 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 #echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
 
 # Temp
-sed -i 's/coolsnowwolf\/luci/Jason6111\/luci/g' feeds.conf.default
 #rm -rf ./target/linux/generic/hack-6.12/220-arm-gc_sections.patch
 # Switch to the specific commit (4bb635d) for mbedtls directory
 #rm -rf ./package/libs/mbedtls/patches/100-fix-gcc14-build.patch
