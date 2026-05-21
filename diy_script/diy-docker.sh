@@ -19,17 +19,17 @@
 #git clone https://github.com/Jason6111/dockerd ./feeds/packages/utils/dockerd && chmod -R 777 ./feeds/packages/utils/dockerd
 
 # dockerd
-# wget https://codeload.github.com/moby/moby/tar.gz/docker-v29.5.1
-# sha256sum docker-v29.5.1
-sed -i -e 's/29.1.1/29.5.1/g' \
-       -e 's/65221f1c70feb1bd1562bb1017b586e4528be877656dc16f5be5659fc9b7e522/26646ad2a39a41ecdc85261f32c491188c995f95130f487332b4c64afaf4cdb4/g' \
-       -e 's/9a84135/dd24a3a/g' ./feeds/packages/utils/dockerd/Makefile
+# wget https://codeload.github.com/moby/moby/tar.gz/docker-v29.5.2
+# sha256sum docker-v29.5.2
+sed -i -e 's/29.1.1/29.5.2/g' \
+       -e 's/65221f1c70feb1bd1562bb1017b586e4528be877656dc16f5be5659fc9b7e522/1235ed325d324c76f52e52beaa1dac85c92a073bf2f9fcc5bb9f67e35a668028/g' \
+       -e 's/9a84135/568f755/g' ./feeds/packages/utils/dockerd/Makefile
 
 # docker
-# wget https://codeload.github.com/docker/cli/tar.gz/v29.5.1
-sed -i -e 's/29.1.1/29.5.1/g' \
-       -e 's/a02081b7d6fb10bfbc8afb621e7edc5124048b31eea7a1ab73c7ccd924b03a66/de3cdd74a66f4cfe843983e4ca8d2133cf5eecc8ad8b5450cec0b7ccd59f921d/g' \
-       -e 's/0aedba5/2518b52/g' ./feeds/packages/utils/docker/Makefile
+# wget https://codeload.github.com/docker/cli/tar.gz/v29.5.2
+sed -i -e 's/29.1.1/29.5.2/g' \
+       -e 's/a02081b7d6fb10bfbc8afb621e7edc5124048b31eea7a1ab73c7ccd924b03a66/e5cf80d9e0b6630bb2e97decf664ad5f0c732b296b7c47030044c3a7287bbddb/g' \
+       -e 's/0aedba5/79eb04c/g' ./feeds/packages/utils/docker/Makefile
        
 # containerd      
 # wget https://codeload.github.com/containerd/containerd/tar.gz/v2.2.0
