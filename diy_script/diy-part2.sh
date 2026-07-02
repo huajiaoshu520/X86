@@ -83,5 +83,5 @@ sed -i 's/e251189ed315f22ab63dc6f17b03178676e10c21fff0cdd863b294a3c51a1b5b/c4833
 sed -i '/containerd.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
 sed -i '/runc.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
 rm -rf ./feeds/packages/net/xray-core
-sed -i 's/26.6.1/26.6.27/g' ./feeds/packages/net/xray-core
-sed -i 's/efe463f8e35c4e6e93a6e8d51b27bae0cd4904b9820740c3af01733efb566fee/3c2c13dbe9dfc8d0f83436566efcf76efb8b3d6f64f37499aea3d8e14d1c559b/g' ./feeds/packages/net/xray-core
+sed -i 's/26.6.1/26.6.27/g' ./feeds/packages/net/xray-core/Makefile
+sed -i 's/efe463f8e35c4e6e93a6e8d51b27bae0cd4904b9820740c3af01733efb566fee/3c2c13dbe9dfc8d0f83436566efcf76efb8b3d6f64f37499aea3d8e14d1c559b/g' ./feeds/packages/net/xray-core/Makefile
