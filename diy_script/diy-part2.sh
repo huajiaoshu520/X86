@@ -83,3 +83,7 @@ sed -i 's/e251189ed315f22ab63dc6f17b03178676e10c21fff0cdd863b294a3c51a1b5b/c4833
 sed -i '/containerd.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
 sed -i '/runc.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
 cp ./feeds/helloworld/xray-core/Makefile ./feeds/packages/net/xray-core/Makefile
+echo >> feeds.conf.default
+echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+./scripts/feeds update istore
+./scripts/feeds install -d y -p istore luci-app-store
