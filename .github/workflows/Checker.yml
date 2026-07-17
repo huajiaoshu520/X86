@@ -27,6 +27,11 @@ env:
   REPO_BRANCH_HelloWorld: dev
   REPO_PATH_HelloWorld : "helloworld"
 
+   # istore源码
+  REPO_URL_istore: https://github.com/linkease/istore
+  REPO_BRANCH_istore: mian
+  REPO_PATH_istore : "istore"
+
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -67,6 +72,11 @@ jobs:
         echo "commitHash_HelloWorld=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
         cd
 
+        git clone --depth 1 $REPO_URL_istore -b $REPO_BRANCH_istore $REPO_PATH_istore 
+        cd $REPO_PATH_istore
+        echo "commitHash_istore=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+        cd
+
     - name: 显示提交头和组合头 #Show Commit Head and Combination Heads
       id: combHeader
       run: |
@@ -75,12 +85,14 @@ jobs:
         echo "commitHash_Lede_Package: ${{ steps.getHash.outputs.commitHash_Lede_Package }}"
         echo "commitHash_Lede_Luci: ${{ steps.getHash.outputs.commitHash_Lede_Luci }}"
         echo "commitHash_HelloWorld: ${{ steps.getHash.outputs.commitHash_HelloWorld }}"
+        echo "commitHash_istore: ${{ steps.getHash.outputs.commitHash_istore }}"
         echo "commitHash_All=\
           ${{steps.getHash.outputs.commitHash_huajiaoshu520X86}}\
           ${{steps.getHash.outputs.commitHash_Lede}}\
           ${{steps.getHash.outputs.commitHash_Lede_Package}}\
           ${{steps.getHash.outputs.commitHash_Lede_Luci}}\
-          ${{steps.getHash.outputs.commitHash_HelloWorld}}" >> $GITHUB_OUTPUT
+          ${{steps.getHash.outputs.commitHash_HelloWorld}}\
+          ${{steps.getHash.outputs.commitHash_istore}}" >> $GITHUB_OUTPUT
           
     - name: 比较提交散列 #Compare Commit Hash
       id: cacheHash
@@ -98,6 +110,7 @@ jobs:
         echo ${{ steps.getHash.outputs.commitHash_Lede_Package }} | tee .commitHash_Lede_Package
         echo ${{ steps.getHash.outputs.commitHash_Lede_Luci }} | tee .commitHash_Lede_Luci
         echo ${{ steps.getHash.outputs.commitHash_HelloWorld }} | tee .commitHash_HelloWorld
+        echo ${{ steps.getHash.outputs.commitHash_istore }} | tee .commitHash_istore
         echo ${{ steps.combHeader.outputs.commitHash_All }} | tee .commitHash_All
 
     - name: 删除工作流程运行 #Delete workflow runs
