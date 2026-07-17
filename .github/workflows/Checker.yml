@@ -29,7 +29,7 @@ env:
 
    # istore源码
   REPO_URL_istore: https://github.com/linkease/istore
-  REPO_BRANCH_istore: mian
+  REPO_BRANCH_istore: main
   REPO_PATH_istore : "istore"
 
 on:
