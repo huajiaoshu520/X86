@@ -30,3 +30,5 @@ echo 'src-git daede https://github.com/kenzok8/openwrt-daede' >> feeds.conf.defa
 # Switch to the specific commit (4bb635d) for mbedtls directory
 #rm -rf ./package/libs/mbedtls/patches/100-fix-gcc14-build.patch
 #git checkout 4bb635d -- package/libs/mbedtls
+rm -rf ./package/kernel/bpf-headers/Makefile
+curl -o ./package/kernel/bpf-headers/Makefile https://github.com/vzwjustin/openmptcprouter/raw/develop/6.18/package/kernel/bpf-headers/Makefile
