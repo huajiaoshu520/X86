@@ -23,12 +23,9 @@ echo "src-git helloworld https://github.com/fw876/helloworld;dev" >> "feeds.conf
 #echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
 #echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
 echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-echo 'src-git daede https://github.com/kenzok8/openwrt-daede' >> feeds.conf.default
 
 # Temp
 #rm -rf ./target/linux/generic/hack-6.12/220-arm-gc_sections.patch
 # Switch to the specific commit (4bb635d) for mbedtls directory
 #rm -rf ./package/libs/mbedtls/patches/100-fix-gcc14-build.patch
 #git checkout 4bb635d -- package/libs/mbedtls
-rm -rf ./package/kernel/bpf-headers/Makefile
-curl -o ./package/kernel/bpf-headers/Makefile https://github.com/vzwjustin/openmptcprouter/raw/develop/6.18/package/kernel/bpf-headers/Makefile
