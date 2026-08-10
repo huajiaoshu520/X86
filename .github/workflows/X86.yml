@@ -227,9 +227,6 @@ jobs:
         echo "</details> <details> <summary> SSRP Commit Top $COMMIT_LOG_NUM </summary>" >> release.txt
         git -C openwrt/feeds/helloworld log -n $COMMIT_LOG_NUM >> release.txt
 
-        echo "</details> <details> <summary> istore Commit Top $COMMIT_LOG_NUM </summary>" >> release.txt
-        git -C openwrt/feeds/istore log -n $COMMIT_LOG_NUM >> release.txt
-
     - name: 上传固件以及发布 #Upload firmware to release
       uses: softprops/action-gh-release@v3
       if: steps.tag.outputs.status == 'success' && !cancelled()
