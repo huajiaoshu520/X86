@@ -30,3 +30,13 @@ sed -i -e 's/29.1.1/29.7.2/g' \
 sed -i -e 's/29.1.1/29.7.2/g' \
        -e 's/a02081b7d6fb10bfbc8afb621e7edc5124048b31eea7a1ab73c7ccd924b03a66/225b7ab2a15f5230b482df8461069cd4bce38891266fb9898d4188d0a3cbf54a/g' \
        -e 's/0aedba5/a7dcaa6/g' ./feeds/packages/utils/docker/Makefile
+# containerd      
+# wget https://codeload.github.com/containerd/containerd/tar.gz/v2.3.3
+sed -i -e 's/2.2.0/2.3.3/g' \
+       -e 's/86e7a268fc73f5332522baef86082c1d6c17986e2957a9ad842ead35d1080fca/fcff2096ef20f1bc1d939bc55a8b831ea3eface574463fd7dc770b33ffe317b2/g' ./feeds/packages/utils/containerd/Makefile
+#sed -i 's/containerd-shim,containerd-shim-runc-v1,//g' ./feeds/packages/utils/containerd/Makefile
+
+# runc
+# https://codeload.github.com/opencontainers/runc/tar.gz/v1.3.4
+sed -i -e 's/1.3.3/1.3.4/g' \
+       -e 's/3da010af5c2c1c3d12d460255e4a7dc049c223ebc629c80fbbe4c10720997ffe/a9f9646c4c8990239f6462b408b22d9aa40ba0473a9fc642b9d6576126495eee/g' ./feeds/packages/utils/runc/Makefile
