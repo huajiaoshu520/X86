@@ -80,6 +80,11 @@ sed -i '/^\[ -n "\$\${IPKG_INSTROOT}" \] \|\| echo "0 4 \* \* \* \/etc\/coremark
 
 #tmep
 sed -i 's/e251189ed315f22ab63dc6f17b03178676e10c21fff0cdd863b294a3c51a1b5b/c48331dcfda73d16cb12a0aa069eb62a5c370428c7559011a7284a9ef67d3089/g' ./package/libs/ustream-ssl/Makefile
+#dockerd
+wget -O ./feeds/packages/utils/dockerd/Makefile \
+  https://raw.githubusercontent.com/openwrt/packages/master/utils/dockerd/Makefile
+sed -i '/EnsureVendoredVersion,containerd/s/^/# /' ./feeds/packages/utils/dockerd/Makefile
+sed -i '/EnsureVendoredVersion,runc/s/^/# /' ./feeds/packages/utils/dockerd/Makefile
 sed -i '/containerd.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
 sed -i '/runc.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
 cp ./feeds/helloworld/xray-core/Makefile ./feeds/packages/net/xray-core/Makefile
