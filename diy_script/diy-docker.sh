@@ -40,3 +40,7 @@ sed -i -e 's/29.1.1/29.7.2/g' \
 # https://codeload.github.com/opencontainers/runc/tar.gz/v1.3.4
 sed -i -e 's/1.3.3/1.3.4/g' \
        -e 's/3da010af5c2c1c3d12d460255e4a7dc049c223ebc629c80fbbe4c10720997ffe/a9f9646c4c8990239f6462b408b22d9aa40ba0473a9fc642b9d6576126495eee/g' ./feeds/packages/utils/runc/Makefile
+
+
+sed -i '/containerd.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
+sed -i '/runc.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
