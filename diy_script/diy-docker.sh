@@ -44,7 +44,8 @@ sed -i -e 's/29.1.1/29.7.2/g' \
 
 sed -i '/containerd.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
 sed -i '/runc.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
+#补丁
 mkdir -p ./feeds/packages/utils/dockerd/patches
 
 wget -O ./feeds/packages/utils/dockerd/patches/001-skip-copy-nested-binaries.patch \
-  https://raw.githubusercontent.com/AndyChiang888/packages/dockerd/utils/dockerd/patches/001-skip-copy-nested-binaries.patch
+  https://raw.githubusercontent.com/huajiaoshu520/X86/refs/heads/main/dockerd/patches/001-skip-copy-nested-binaries.patch
