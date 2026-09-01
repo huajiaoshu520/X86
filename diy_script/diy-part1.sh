@@ -22,6 +22,7 @@ sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=$(LINUX_VERSION)-/g' include/image.mk
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
 #echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
+echo "src-git quickstart https://github.com/huajiaoshu520/quickstart" >> "feeds.conf.default"
 
 # Temp
 #rm -rf ./target/linux/generic/hack-6.12/220-arm-gc_sections.patch
