@@ -27,8 +27,9 @@ sed -i -e 's/29.6.1/29.8.0/g' \
        -e 's/74d14dd212b07cd3328989dc6a029dde2ebbe6a878199eaaafad54916f456194/c5fadbc00c02dbecb1b7c9936e188baf9c80421a9107e7e9ad36a0923a0fc764/g' \
        -e 's/8900f1d/88096ef/g' ./feeds/packages/utils/docker/Makefile
 
-sed -i '/containerd.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
-sed -i '/runc.installer/{s/^/# /}' ./feeds/packages/utils/dockerd/Makefile
+sed -i -e '\|$(call EnsureVendoredVersion,containerd)|{s/^/# /}' \
+       -e '\|$(call EnsureVendoredVersion,runc)|{s/^/# /}' \
+       ./feeds/packages/utils/dockerd/Makefile
 
 #补丁
 mkdir -p ./feeds/packages/utils/dockerd/patches
