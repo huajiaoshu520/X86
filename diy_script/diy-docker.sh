@@ -19,11 +19,11 @@ sed -i -e 's/29.6.1/29.8.0/g' \
        
 #containerd       
 wget -O ./feeds/packages/utils/containerd/Makefile \
-  https://raw.githubusercontent.com/huajiaoshu520/X86-daed/refs/heads/main/patches/containerd/Makefile
+  https://raw.githubusercontent.com/huajiaoshu520/X86/refs/heads/main/patches/containerd/Makefile
   
 #runc  
 wget -O ./feeds/packages/utils/runc/Makefile \
-  https://raw.githubusercontent.com/huajiaoshu520/X86-daed/refs/heads/main/patches/runc/Makefile
+  https://raw.githubusercontent.com/huajiaoshu520/X86/refs/heads/main/patches/runc/Makefile
   
 #适配docker29.8.0
 wget -O ./feeds/packages/utils/docker/Makefile \
